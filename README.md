@@ -24,7 +24,12 @@ cd digimon-api
 npm install
 ```
 
-2. Crie um arquivo .env na raiz do projeto e adicione o seguinte conteúdo:
+2. No postgres, crie um banco de dados com o nome que desejar, de prefêrencia "digimon"
+```bash
+CREATE DATABASE digimon;
+```   
+
+3. Crie um arquivo .env na raiz do projeto e adicione o seguinte conteúdo:
 ```plaintext
 DATABASE_URL="postgresql://fulano:senhafulano@localhost:5432/digimon?schema=public"
 
@@ -36,9 +41,11 @@ senhafulano: senha do usuário fulano para acessar o postgresql
 
 5432: porta que o potgres roda na sua máquina (5432 é a padrão)
 
+digimon: o nome do banco de dados que você criou no passo anterior
+
 PORT é a porta local no qual seu servidor vai rodar
 
-3. Execute as migrações do banco de dados utilizando o Prisma:
+4. Execute as migrações do banco de dados utilizando o Prisma:
 ```bash
 npx prisma migrate dev
 ```

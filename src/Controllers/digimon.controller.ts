@@ -16,12 +16,15 @@ interface Digimon{
 Essa função verifica se o banco já está populado com digimons toda vez que o server é iniciado.
 Caso o banco esteja vazio ele irá buscar os digimons da API e inseri-los no banco de dados.
 Caso o banco já esteja populado ele não faz nada.
+Além disso verifica se não está em ambiente de testes
 */
 export async function popularDigimon(): Promise<void> {
     try {
         const digimonCount = await prisma.digimon.count();
         if (digimonCount > 0) {
-            console.log("O banco de dados já está populado com digimons.");
+            if (process.env.NODE_ENV !== 'test') {
+                console.log("O banco de dados já está populado com digimons.");
+            }
             return;
         }
 
@@ -35,7 +38,9 @@ export async function popularDigimon(): Promise<void> {
         );
 
         await Promise.all(createPromises);
-        console.log("Banco de dados populado com sucesso com os digimons.");
+        if (process.env.NODE_ENV !== 'test') {
+            console.log("Banco de dados populado com sucesso com os digimons.");
+        }
 
     } catch (err) {
         console.error('Erro ao povoar os digimons:', err);

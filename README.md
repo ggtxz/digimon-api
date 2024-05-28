@@ -12,6 +12,7 @@ Este repositório contém o backend do projeto Digimon API, uma aplicação dese
 
 - Node.js (versão 20 ou superior) 
 - PostgreSQL (instalado e em execução)
+- Git (Instalado)
 
 ## Instalação
 

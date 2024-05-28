@@ -36,6 +36,8 @@ senhafulano: senha do usuário fulano para acessar o postgresql
 
 5432: porta que o potgres roda na sua máquina (5432 é a padrão)
 
+PORT é a porta local no qual seu servidor vai rodar
+
 3. Execute as migrações do banco de dados utilizando o Prisma:
 ```bash
 npx prisma migrate dev

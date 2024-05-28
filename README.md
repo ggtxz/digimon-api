@@ -55,6 +55,7 @@ Após concluir os passos de instalação, você pode executar o servidor utiliza
 ```bash
 npm run dev
 ```
+Acesse http://localhost:3000/digimon para ver o banco populado com os digimons
 
 ## Executando os Testes
 Com o servidor desligado, rode o seguinte comando para realizar os testes unitários:

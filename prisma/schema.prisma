@@ -12,3 +12,10 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model digimon {
+  id    Int     @id @default(autoincrement())
+  name  String  @db.VarChar(45)
+  img   String  @db.VarChar(255)
+  level String  @db.VarChar(45)
+}

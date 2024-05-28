@@ -1,15 +1,12 @@
-import express, { Express, Request, Response } from "express";
-import dotenv from "dotenv";
-
-dotenv.config();
+import express, { Express } from "express";
+import digimonRouter from "./Routes/digimon.routes"
+import { setupSwagger } from './swagger';
 
 const app: Express = express();
-const port = process.env.PORT;
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Iniciando server");
-});
+app.use('/digimon', digimonRouter)
+app.use(express.json());
 
-app.listen(port, () => {
-  console.log(`[server]: Server is running at http://localhost:${port}`);
-});
+setupSwagger(app);
+
+export default app;

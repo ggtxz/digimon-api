@@ -31,7 +31,9 @@ DATABASE_URL="postgresql://fulano:senhafulano@localhost:5432/digimon?schema=publ
 PORT=3000
 ```
 fulano: seu usuário do postgresql
+
 senhafulano: senha do usuário fulano para acessar o postgresql  
+
 5432: porta que o potgres roda na sua máquina (5432 é a padrão)
 
 3. Execute as migrações do banco de dados utilizando o Prisma:

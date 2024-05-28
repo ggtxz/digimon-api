@@ -25,7 +25,7 @@ npm install
 ```
 
 2. No postgres, crie um banco de dados com o nome que desejar, de prefêrencia "digimon"
-```bash
+```sql
 CREATE DATABASE digimon;
 ```   
 

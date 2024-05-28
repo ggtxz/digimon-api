@@ -11,15 +11,15 @@ describe('Testes das rotas Digimon', () => {
     expect(response.body.data).toBeInstanceOf(Array);
   });
 
-  // Teste para verificar a rota que retorna os digimons que contenha "Agumon" no nome
+  // Teste para verificar a rota que retorna os digimons que contenha "Bird" no nome
   it('Deve retornar um Digimon pelo nome', async () => {
-    const response = await request(app).get('/digimon/nome/Agumon');
+    const response = await request(app).get('/digimon/nome/Bird');
 
     expect(response.status).toBe(200);
     expect(response.body).toHaveProperty('data');
     expect(response.body.data).toBeInstanceOf(Array);
     if (response.body.data.length > 0) {
-      expect(response.body.data[0].name).toBe('Agumon');
+      expect(response.body.data[0].name).toBe('Birdramon');
     }
   });
 
